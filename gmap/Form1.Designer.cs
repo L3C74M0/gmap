@@ -35,6 +35,7 @@
             // 
             this.gmap.Bearing = 0F;
             this.gmap.CanDragMap = true;
+            this.gmap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gmap.EmptyTileColor = System.Drawing.Color.Navy;
             this.gmap.GrayScaleMode = false;
             this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;

@@ -15,9 +15,9 @@ namespace gmap {
         }
 
         private void gMapController_Load(object sender, EventArgs e) {
-            gmap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+            gmap.MapProvider = GMap.NET.MapProviders.GoogleTerrainMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
-            gmap.SetPositionByKeywords("Medellín, Colombia");
+            gmap.SetPositionByKeywords("Cali, Colombia");
         }
     }
 }
