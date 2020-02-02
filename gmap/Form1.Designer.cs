@@ -66,7 +66,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gmap);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Maps";
             this.ResumeLayout(false);
 
         }
