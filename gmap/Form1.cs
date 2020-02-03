@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -21,7 +22,7 @@ namespace gmap {
         DataTable dt;
         public Form1() {
             InitializeComponent();
-
+            readInfo();
         }
 
         private void gMapController_Load(object sender, EventArgs e) {
@@ -53,6 +54,41 @@ namespace gmap {
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        public void readInfo()
+        {
+            string result="";
+            try
+            {
+                var url = "https://query.data.world/s/6ankomqkxpsxwh4nnxjnw4ffvc7knf";
+                 var client = new WebClient();
+                 using (var stream = client.OpenRead(url))
+                 using (var reader = new StreamReader(stream))
+                 {
+                     String line = reader.ReadLine();
+                     int count = 0;
+                     while ((line = reader.ReadLine()) != null && count < 5)
+                     {
+                         String[] args = line.Split(',');
+
+                         String origin = args[14].Replace("\"", "");
+                         String destination = args[24].Replace("\"", "");
+                         String date = args[5].Replace("\"", "");
+                         String nVuelo = args[11].Replace("\"", "");
+                         count++;
+                     }
+                    reader.Close();
+                    stream.Close();
+                 }
+                 
+            }
+            catch (WebException e)
+            {
+                result = string.Format("Could not get data. {0}", e);
+                Console.WriteLine(result);
+            }
 
         }
 
