@@ -73,12 +73,17 @@ namespace gmap {
                          String[] args = line.Split(',');
 
                          String origin = args[15].Replace("\"", "");
+                         String originState = args[19].Replace("\"", "");
                          String destination = args[25].Replace("\"", "");
+                         String destinationState = args[29].Replace("\"", "");
                          String date = args[5].Replace("\"", "");
                          String nVuelo = args[9].Replace("\"", "");
                          count++;
-                         dt.Rows.Add(""+nVuelo,""+date,""+origin,""+destination);
-                     }
+                        String city1 = origin + "," + originState;
+                        String city2 = destination + "," + destinationState;
+                        dt.Rows.Add(""+nVuelo,""+date,""+ city1, ""+ city2);
+                        
+                    }
                     reader.Close();
                     stream.Close();
                  }
@@ -109,10 +114,21 @@ namespace gmap {
             textBoxSalida.Text = salida;
             textBoxNvuelo.Text = nVuelo;
 
+            GeoCoderStatusCode statusCode;
+            var pointLatLng1 =OpenStreetMapProvider.Instance.GetPoint(salida, out statusCode);
+            var pointLatLng2 = OpenStreetMapProvider.Instance.GetPoint(llegada, out statusCode);
+            String lat2 = pointLatLng2?.Lat.ToString();
+            String lon2 = pointLatLng2?.Lng.ToString();
+            String lat1 = pointLatLng1?.Lat.ToString();
+            String lon1 = pointLatLng1?.Lng.ToString();
+            double l = Convert.ToDouble(lat1);
+            double lo = Convert.ToDouble(lon1);
+            double l1 = Convert.ToDouble(lat2);
+            double lo1 = Convert.ToDouble(lon2);
             GMapOverlay ruta = new GMapOverlay("Capa ruta");
             List<PointLatLng> puntos = new List<PointLatLng>();
-            puntos.Add(new PointLatLng(38.9041, -77.0171));
-            puntos.Add(new PointLatLng(39.2903786, -76.6121902));
+            puntos.Add(new PointLatLng(l, lo));
+            puntos.Add(new PointLatLng(l1, lo1));
             GMapRoute puntosRuta = new GMapRoute(puntos,"rutas");
             ruta.Routes.Add(puntosRuta);
             gmap.Overlays.Add(ruta);
