@@ -4,9 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+
 
 namespace gmap {
     public partial class Form1 : Form {
@@ -19,12 +26,13 @@ namespace gmap {
 
         private void gMapController_Load(object sender, EventArgs e) {
             dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Year",typeof(String)));
+            dt.Columns.Add(new DataColumn("tailnum",typeof(String)));
             dt.Columns.Add(new DataColumn("Month", typeof(String)));
             dt.Columns.Add(new DataColumn("Salida", typeof(String)));
             dt.Columns.Add(new DataColumn("Llegada", typeof(String)));
-            dt.Rows.Add("2017","march","Cali","Bogota");
+            dt.Rows.Add("AAA","MARCH","N","new york");
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
             gmap.DragButton = MouseButtons.Left;
@@ -62,6 +70,16 @@ namespace gmap {
             textBoxMes.Text = month;
             textBoxLLegada.Text = llegada;
             textBoxSalida.Text = salida;
+
+            GMapOverlay ruta = new GMapOverlay("Capa ruta");
+            List<PointLatLng> puntos = new List<PointLatLng>();
+            puntos.Add(new PointLatLng(38.9041, -77.0171));
+            puntos.Add(new PointLatLng(39.2903786, -76.6121902));
+            GMapRoute puntosRuta = new GMapRoute(puntos,"rutas");
+            ruta.Routes.Add(puntosRuta);
+            gmap.Overlays.Add(ruta);
+            gmap.Zoom = gmap.Zoom + 1;
+            gmap.Zoom = gmap.Zoom - 1;
         }
     }
 }
