@@ -64,12 +64,14 @@ namespace gmap {
         private void selectFlight(object sender, DataGridViewCellMouseEventArgs e)
         {
             int filaSeleccionada = e.RowIndex;
+            String nVuelo = dataGridView1.Rows[filaSeleccionada].Cells[0].Value.ToString();
             String salida = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
             String llegada = dataGridView1.Rows[filaSeleccionada].Cells[3].Value.ToString();
             String month = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
             textBoxMes.Text = month;
             textBoxLLegada.Text = llegada;
             textBoxSalida.Text = salida;
+            textBoxNvuelo.Text = nVuelo;
 
             GMapOverlay ruta = new GMapOverlay("Capa ruta");
             List<PointLatLng> puntos = new List<PointLatLng>();

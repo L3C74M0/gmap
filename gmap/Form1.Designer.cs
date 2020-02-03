@@ -37,10 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxMes = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonPrevPage = new System.Windows.Forms.Button();
-            this.buttonNextPag = new System.Windows.Forms.Button();
-            this.labelNpage = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxNvuelo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(639, 39);
+            this.label1.Location = new System.Drawing.Point(6, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 1;
@@ -87,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(639, 91);
+            this.label2.Location = new System.Drawing.Point(6, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 2;
@@ -95,25 +94,31 @@
             // 
             // textBoxSalida
             // 
-            this.textBoxSalida.Location = new System.Drawing.Point(642, 56);
+            this.textBoxSalida.Location = new System.Drawing.Point(9, 95);
             this.textBoxSalida.Name = "textBoxSalida";
             this.textBoxSalida.Size = new System.Drawing.Size(113, 20);
             this.textBoxSalida.TabIndex = 3;
             // 
             // textBoxLLegada
             // 
-            this.textBoxLLegada.Location = new System.Drawing.Point(642, 107);
+            this.textBoxLLegada.Location = new System.Drawing.Point(8, 146);
             this.textBoxLLegada.Name = "textBoxLLegada";
             this.textBoxLLegada.Size = new System.Drawing.Size(113, 20);
             this.textBoxLLegada.TabIndex = 4;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxSalida);
+            this.groupBox1.Controls.Add(this.textBoxLLegada);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxNvuelo);
             this.groupBox1.Controls.Add(this.textBoxMes);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(634, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 181);
+            this.groupBox1.Size = new System.Drawing.Size(257, 181);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
@@ -121,16 +126,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 130);
+            this.label3.Location = new System.Drawing.Point(6, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Mes";
+            this.label3.Text = "Numero vuelo";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxMes
             // 
-            this.textBoxMes.Location = new System.Drawing.Point(8, 147);
+            this.textBoxMes.Location = new System.Drawing.Point(138, 44);
             this.textBoxMes.Name = "textBoxMes";
             this.textBoxMes.Size = new System.Drawing.Size(113, 20);
             this.textBoxMes.TabIndex = 1;
@@ -138,43 +143,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.labelNpage);
-            this.groupBox2.Controls.Add(this.buttonNextPag);
-            this.groupBox2.Controls.Add(this.buttonPrevPage);
             this.groupBox2.Location = new System.Drawing.Point(634, 212);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 284);
+            this.groupBox2.Size = new System.Drawing.Size(257, 284);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Flights";
-            // 
-            // buttonPrevPage
-            // 
-            this.buttonPrevPage.Location = new System.Drawing.Point(56, 255);
-            this.buttonPrevPage.Name = "buttonPrevPage";
-            this.buttonPrevPage.Size = new System.Drawing.Size(35, 23);
-            this.buttonPrevPage.TabIndex = 0;
-            this.buttonPrevPage.Text = "<";
-            this.buttonPrevPage.UseVisualStyleBackColor = true;
-            this.buttonPrevPage.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonNextPag
-            // 
-            this.buttonNextPag.Location = new System.Drawing.Point(160, 255);
-            this.buttonNextPag.Name = "buttonNextPag";
-            this.buttonNextPag.Size = new System.Drawing.Size(35, 23);
-            this.buttonNextPag.TabIndex = 1;
-            this.buttonNextPag.Text = ">";
-            this.buttonNextPag.UseVisualStyleBackColor = true;
-            // 
-            // labelNpage
-            // 
-            this.labelNpage.AutoSize = true;
-            this.labelNpage.Location = new System.Drawing.Point(120, 260);
-            this.labelNpage.Name = "labelNpage";
-            this.labelNpage.Size = new System.Drawing.Size(13, 13);
-            this.labelNpage.TabIndex = 2;
-            this.labelNpage.Text = "1";
             // 
             // dataGridView1
             // 
@@ -184,9 +158,25 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(246, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(255, 216);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.selectFlight);
+            // 
+            // textBoxNvuelo
+            // 
+            this.textBoxNvuelo.Location = new System.Drawing.Point(9, 44);
+            this.textBoxNvuelo.Name = "textBoxNvuelo";
+            this.textBoxNvuelo.Size = new System.Drawing.Size(113, 20);
+            this.textBoxNvuelo.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(142, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Mes";
             // 
             // Form1
             // 
@@ -194,10 +184,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 508);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBoxLLegada);
-            this.Controls.Add(this.textBoxSalida);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.gmap);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -205,10 +191,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -223,10 +207,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxMes;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button buttonPrevPage;
-        private System.Windows.Forms.Label labelNpage;
-        private System.Windows.Forms.Button buttonNextPag;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxNvuelo;
     }
 }
 
