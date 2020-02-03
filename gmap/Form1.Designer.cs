@@ -34,12 +34,12 @@
             this.textBoxSalida = new System.Windows.Forms.TextBox();
             this.textBoxLLegada = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxNvuelo = new System.Windows.Forms.TextBox();
             this.textBoxMes = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBoxNvuelo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -105,6 +105,7 @@
             this.textBoxLLegada.Name = "textBoxLLegada";
             this.textBoxLLegada.Size = new System.Drawing.Size(113, 20);
             this.textBoxLLegada.TabIndex = 4;
+            this.textBoxLLegada.TextChanged += new System.EventHandler(this.textBoxLLegada_TextChanged);
             // 
             // groupBox1
             // 
@@ -123,6 +124,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(142, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Mes";
+            // 
+            // textBoxNvuelo
+            // 
+            this.textBoxNvuelo.Location = new System.Drawing.Point(9, 44);
+            this.textBoxNvuelo.Name = "textBoxNvuelo";
+            this.textBoxNvuelo.Size = new System.Drawing.Size(113, 20);
+            this.textBoxNvuelo.TabIndex = 2;
+            // 
+            // textBoxMes
+            // 
+            this.textBoxMes.Location = new System.Drawing.Point(138, 44);
+            this.textBoxMes.Name = "textBoxMes";
+            this.textBoxMes.Size = new System.Drawing.Size(113, 20);
+            this.textBoxMes.TabIndex = 1;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -132,13 +156,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Numero vuelo";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBoxMes
-            // 
-            this.textBoxMes.Location = new System.Drawing.Point(138, 44);
-            this.textBoxMes.Name = "textBoxMes";
-            this.textBoxMes.Size = new System.Drawing.Size(113, 20);
-            this.textBoxMes.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -161,22 +178,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(255, 216);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.selectFlight);
-            // 
-            // textBoxNvuelo
-            // 
-            this.textBoxNvuelo.Location = new System.Drawing.Point(9, 44);
-            this.textBoxNvuelo.Name = "textBoxNvuelo";
-            this.textBoxNvuelo.Size = new System.Drawing.Size(113, 20);
-            this.textBoxNvuelo.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(142, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Mes";
             // 
             // Form1
             // 

@@ -22,7 +22,6 @@ namespace gmap {
         DataTable dt;
         public Form1() {
             InitializeComponent();
-            readInfo();
         }
 
         private void gMapController_Load(object sender, EventArgs e) {
@@ -31,7 +30,7 @@ namespace gmap {
             dt.Columns.Add(new DataColumn("Month", typeof(String)));
             dt.Columns.Add(new DataColumn("Salida", typeof(String)));
             dt.Columns.Add(new DataColumn("Llegada", typeof(String)));
-            dt.Rows.Add("AAA","MARCH","N","new york");
+            readInfo();
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].Visible = false;
@@ -69,15 +68,16 @@ namespace gmap {
                  {
                      String line = reader.ReadLine();
                      int count = 0;
-                     while ((line = reader.ReadLine()) != null && count < 5)
+                     while ((line = reader.ReadLine()) != null && count<=1000)
                      {
                          String[] args = line.Split(',');
 
-                         String origin = args[14].Replace("\"", "");
-                         String destination = args[24].Replace("\"", "");
+                         String origin = args[15].Replace("\"", "");
+                         String destination = args[25].Replace("\"", "");
                          String date = args[5].Replace("\"", "");
-                         String nVuelo = args[11].Replace("\"", "");
+                         String nVuelo = args[9].Replace("\"", "");
                          count++;
+                         dt.Rows.Add(""+nVuelo,""+date,""+origin,""+destination);
                      }
                     reader.Close();
                     stream.Close();
@@ -118,6 +118,11 @@ namespace gmap {
             gmap.Overlays.Add(ruta);
             gmap.Zoom = gmap.Zoom + 1;
             gmap.Zoom = gmap.Zoom - 1;
+        }
+
+        private void textBoxLLegada_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
