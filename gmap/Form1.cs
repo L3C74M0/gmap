@@ -46,15 +46,7 @@ namespace gmap {
             gmap.AutoScroll = true;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         public void readInfo()
         {
@@ -97,10 +89,6 @@ namespace gmap {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void selectFlight(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -136,9 +124,7 @@ namespace gmap {
             gmap.Zoom = gmap.Zoom - 1;
         }
 
-        private void textBoxLLegada_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
     }
 }
